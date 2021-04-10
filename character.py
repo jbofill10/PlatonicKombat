@@ -1,7 +1,6 @@
 class Character:
 
     name = None
-    ai = False
     hp = None
     current_image = None 
     pygame = None
@@ -19,19 +18,22 @@ class Character:
 
     x = 0
     y = 0
-
+    hitbox = 0
+    
     walkCount = 0
     z_att_count = 0
     x_att_count = 0
     c_att_count = 0
 
-    def __init__(self, name, hp, pygame, x, y, ai=False):
+    screen = None
+
+    def __init__(self, name, hp, pygame, screen, x, y):
         self.name = name
-        self.ai = ai
         self.hp = hp
         self.pygame = pygame
         self.x = x
         self.y = y
+        self.screen = screen
 
         self.load_sprites()
 
@@ -81,7 +83,5 @@ class Character:
 
         else:
             self.idle()
-
-
 
     
